@@ -3,22 +3,25 @@
     <p id="notice"><%= notice %></p>
     <div class="container"> 
       <div class="row">
-        <%= form_for(@book) do |f| %>
-        <h1>Editing Book</h1>
-        <div class="form-group">
-          <%= f.label :title %>
-          <%= f.text_field :title,class: "col-xs-12" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :opinion %>
-          <%= f.text_area :body,class: "col-xs-12" %>
-        </div>
-        <div class="form-group">
-          <%= f.submit 'Update Book',class: "col-xs-12 btn btn-primary" %>
-        </div>
+        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+          <%= form_for(@book) do |f| %>
+          <h1>Editing Book</h1>
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title,class: "form-control book_title" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :opinion %>
+            <%= f.text_area :body,class: "form-control book_body" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit 'Update Book',class: "btn btn-success" %>
+          </div>
         <% end %>
+        <%= link_to 'Show', book_path(@book) %>|<%= link_to 'Back', books_path %>
+        </div>
       </div>
     </div>
-<%= link_to 'Show', book_path(@book) %>|<%= link_to 'Back', books_path %>
+
   </main>
 </body>
